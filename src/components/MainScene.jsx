@@ -1,7 +1,12 @@
 import * as THREE from 'three';
-import {OBJLoader} from "three/addons/loaders/OBJLoader.js";
-import {MTLLoader} from "three/addons";
 import {OrbitControls} from "three/addons/controls/OrbitControls.js";
+import {loadRiverModels} from "./Loaders/Layer1/loadRiverObj.jsx";
+import {loadSWModels} from "./Loaders/Layer1/loadSWObj.jsx";
+import {loadSWBuildingModels} from "./Loaders/Layer2/loadSWBuildingObj.jsx";
+import {loadNorthModels} from "./Loaders/Layer1/loadNorthObj.jsx";
+import {loadNorthBuildingModels} from "./Loaders/Layer2/loadNorthBuildingObj.jsx";
+import {loadEastModels} from "./Loaders/Layer1/loadEastObj.jsx";
+import {loadEastBuildingModels} from "./Loaders/Layer2/loadEastBuildingObj.jsx";
 
 export default function MainScene() {
     // ✅ Renderer 설정
@@ -10,7 +15,7 @@ export default function MainScene() {
     const renderer = new THREE.WebGLRenderer({antialias: true, canvas});
 
     const camera = new THREE.PerspectiveCamera(45, 2, 0.1, 1000);
-    camera.position.set(0, 5, 10);
+    camera.position.set(0, 5, 20);
     camera.lookAt(0, 0, 0);
 
     const scene = new THREE.Scene();
@@ -33,61 +38,19 @@ export default function MainScene() {
     addLight(5, 5, 2);
     addLight(-5, 5, 5);
 
-    const objFiles = Object.values(
-        import.meta.glob("../assets/hexagon-kit/Models/OBJ/*.obj", {eager: true})
-    ).map(m => m.default);
+    loadRiverModels(scene);
 
+    // E 방향
+    loadEastModels(scene);
+    loadEastBuildingModels(scene);
 
-    const mtlFiles = Object.values(
-        import.meta.glob("../assets/hexagon-kit/Models/OBJ/*.mtl", {eager: true})
-    ).map(m => m.default);
+    // SW 방향
+    loadSWModels(scene);
+    loadSWBuildingModels(scene);
 
-    function loadModel(objUrl, mtlUrl) {
-        return new Promise((resolve) => {
-            const mtlLoader = new MTLLoader();
-            mtlLoader.load(mtlUrl, (materials) => {
-                materials.preload();
-
-                const objLoader = new OBJLoader();
-                objLoader.setMaterials(materials);
-
-                objLoader.load(objUrl, (object) => {
-                    resolve(object);
-                })
-            })
-        })
-    }
-
-    async function loadAllModels() {
-        const count = objFiles.length;
-
-        // 정사각형 크기 (2x2, 3x3, 4x4...)
-        const gridSize = Math.ceil(Math.sqrt(count));
-
-        const gap = 2; // 모델 간 간격
-        const half = (gridSize - 1) / 2; // 중심으로 맞추기 offset
-
-        for (let i = 0; i < count; i++) {
-            const objUrl = objFiles[i];
-            const mtlUrl = mtlFiles[i];
-
-            const object = await loadModel(objUrl, mtlUrl);
-
-            // grid 좌표 계산
-            const row = Math.floor(i / gridSize);
-            const col = i % gridSize;
-
-            // 중심 기준 좌표로 변환 (중요!)
-            const x = (col - half) * gap;
-            const z = (row - half) * gap;
-
-            object.position.set(x, 0, z);
-
-            scene.add(object);
-        }
-    }
-
-    loadAllModels();
+    // N 방향
+    loadNorthModels(scene);
+    loadNorthBuildingModels(scene);
 
     function resizeRendererToDisplaySize(renderer) {
         const canvas = renderer.domElement;
