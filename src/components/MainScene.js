@@ -7,6 +7,13 @@ import {loadNorthModels} from "./Loaders/Layer1/loadNorthObj.jsx";
 import {loadNorthBuildingModels} from "./Loaders/Layer2/loadNorthBuildingObj.jsx";
 import {loadEastModels} from "./Loaders/Layer1/loadEastObj.jsx";
 import {loadEastBuildingModels} from "./Loaders/Layer2/loadEastBuildingObj.jsx";
+import {WeatherController} from "./Effect/EffectController.js"
+
+let weatherController;
+
+export function changeWeather(type) {  // ← UI에서 이 함수 사용
+    weatherController?.setWeather(type);
+}
 
 export default function MainScene() {
     // ✅ Renderer 설정
@@ -19,11 +26,11 @@ export default function MainScene() {
     camera.lookAt(0, 0, 0);
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color('white');
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.target.set(0, 0, 0); // OBJ 중심을 바라보게
     controls.update();
+
 
     // ✅ 라이트 추가
     function addLight(...pos) {
@@ -52,6 +59,11 @@ export default function MainScene() {
     loadNorthModels(scene);
     loadNorthBuildingModels(scene);
 
+    // 기상 효과 변화
+    weatherController = new WeatherController(scene);
+
+    const clock = new THREE.Clock();
+
     function resizeRendererToDisplaySize(renderer) {
         const canvas = renderer.domElement;
         const width = canvas.clientWidth;
@@ -65,16 +77,16 @@ export default function MainScene() {
 
 
     function render() {
+        const deltaTime = clock.getDelta();
+
+        if (weatherController) {
+            weatherController.update(deltaTime);
+        }
         if (resizeRendererToDisplaySize(renderer)) {
             const canvas = renderer.domElement;
             camera.aspect = canvas.clientWidth / canvas.clientHeight;
             camera.updateProjectionMatrix();
         }
-        scene.background = new THREE.Color(0x000000);
-
-        camera.updateProjectionMatrix();
-
-        scene.background.set(0x000000);
 
         renderer.render(scene, camera);
         requestAnimationFrame(render);
