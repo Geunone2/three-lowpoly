@@ -209,6 +209,12 @@ export async function loadNorthModels(scene) {
         if (item.dir) {
             object.rotation.y = getRotation(item.dir);
         }
+
+        object.traverse(child => {
+            if (child.isMesh) {
+                child.userData.region = "prairie";
+            }
+        });
         scene.add(object);
     }
 

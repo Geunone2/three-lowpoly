@@ -138,6 +138,11 @@ export async function loadEastBuildingModels(scene) {
         if (item.dir) {
             object.rotation.y = getRotation(item.dir);
         }
+        object.traverse(child => {
+            if (child.isMesh) {
+                child.userData.region = "desert";
+            }
+        });
         scene.add(object);
     }
 
