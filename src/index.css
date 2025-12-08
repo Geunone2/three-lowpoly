@@ -4,9 +4,18 @@ html, body {
 }
 
 #c {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    display: block;
+    background: linear-gradient(
+            180deg,
+            #8fdbff 0%,
+            #ffffff 50%,
+            #8fdbff 50%,
+            #8fdbff 100%
+    );
 }
 
 .weather-select {
@@ -18,6 +27,8 @@ html, body {
     background: rgba(255, 255, 255, 0.8);
     padding: 8px 12px;
     border-radius: 8px;
+    z-index: 2;
+    pointer-events: auto;
 }
 
 .weather-select button {
@@ -30,22 +41,4 @@ html, body {
 
 .weather-select button:hover {
     transform: scale(1.2);
-}
-
-.light-select {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 8px 12px;
-    border-radius: 8px;
-}
-
-.light-select button {
-    font-size: 24px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
 }

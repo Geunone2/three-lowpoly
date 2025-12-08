@@ -204,7 +204,12 @@ export async function loadSWModels(scene) {
         if (item.dir) {
             object.rotation.y = getRotation(item.dir);
         }
+
+        object.traverse(child => {
+            if (child.isMesh) {
+                child.userData.region = "sea";
+            }
+        });
         scene.add(object);
     }
-
 }

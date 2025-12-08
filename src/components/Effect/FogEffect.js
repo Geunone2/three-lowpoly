@@ -6,8 +6,8 @@ export default class FogEffect {
 
         this.scene.fog = new THREE.FogExp2(0xCCCCCC, 0.00);
 
-        this.startDensity = 0.00;
-        this.targetDensity = 0.06;
+        this.startDensity = 0.000;
+        this.targetDensity = 0.012;
         this.duration = 5000;
         this.startTime = null;
         this.isAnimating = true;

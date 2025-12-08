@@ -153,7 +153,6 @@ const NorthBuildingLayOut2 = [
     {type: 'sand', position: hexPosition(0, -11, 0.2)},
     {type: 'building-castle', position: hexPosition(0, -11, 0.4), dir: "SW"},
 
-
 ];
 
 
@@ -194,6 +193,12 @@ export async function loadNorthBuildingModels(scene) {
         if (item.dir) {
             object.rotation.y = getRotation(item.dir);
         }
+
+        object.traverse(child => {
+            if (child.isMesh) {
+                child.userData.region = "prairie";
+            }
+        });
         scene.add(object);
     }
 
