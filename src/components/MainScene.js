@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import {OrbitControls} from "three/addons/controls/OrbitControls.js";
 import {loadRiverModels} from "./Loaders/Layer1/loadRiverObj.jsx";
 import {loadSWModels} from "./Loaders/Layer1/loadSWObj.jsx";
 import {loadSWBuildingModels} from "./Loaders/Layer2/loadSWBuildingObj.jsx";
@@ -8,6 +7,9 @@ import {loadNorthBuildingModels} from "./Loaders/Layer2/loadNorthBuildingObj.jsx
 import {loadEastModels} from "./Loaders/Layer1/loadEastObj.jsx";
 import {loadEastBuildingModels} from "./Loaders/Layer2/loadEastBuildingObj.jsx";
 import {WeatherController} from "./Effect/EffectController.js"
+import CameraController from "./Camera/CameraController.jsx";
+import DefaultCamera from "./Camera/DefaultCamera.jsx";
+import addGlobalLight from "./Light/LightController.jsx";
 
 let weatherController;
 
@@ -18,32 +20,25 @@ export function changeWeather(type) {  // ← UI에서 이 함수 사용
 export default function MainScene() {
     // ✅ Renderer 설정
     const canvas = document.querySelector('#c');
+    const renderer = new THREE.WebGLRenderer({antialias: true, canvas, alpha: true,});
 
-    const renderer = new THREE.WebGLRenderer({antialias: true, canvas});
-
-    const camera = new THREE.PerspectiveCamera(45, 2, 0.1, 1000);
-    camera.position.set(0, 5, 20);
-    camera.lookAt(0, 0, 0);
+    const {camera} = DefaultCamera();
 
     const scene = new THREE.Scene();
 
-    const controls = new OrbitControls(camera, renderer.domElement);
-    controls.target.set(0, 0, 0); // OBJ 중심을 바라보게
-    controls.update();
+    const cameraGroup = new THREE.Group();
+    scene.add(cameraGroup);
+    cameraGroup.add(camera);
 
+    const cameraController = new CameraController(camera, renderer, cameraGroup);
 
-    // ✅ 라이트 추가
-    function addLight(...pos) {
-        const color = 0xffffff;
-        const intensity = 2.5;
-        const light = new THREE.DirectionalLight(color, intensity);
-        light.position.set(...pos);
-        scene.add(light);
-        scene.add(light.target);
-    }
+    // 조명 추가
+    const {ambientLight, dirLight} = addGlobalLight(scene);
+    ambientLight.color.set(0xffffff);
+    ambientLight.intensity = 2;
 
-    addLight(5, 5, 2);
-    addLight(-5, 5, 5);
+    dirLight.color.set(0xffffff);
+    dirLight.intensity = 1.2;
 
     loadRiverModels(scene);
 
@@ -63,6 +58,54 @@ export default function MainScene() {
     weatherController = new WeatherController(scene);
 
     const clock = new THREE.Clock();
+
+    // 클릭 처리
+    const raycaster = new THREE.Raycaster();
+    const mouse = new THREE.Vector2();
+
+    canvas.addEventListener("click", onClick);
+
+    function onClick(event) {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+        mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+        // Raycaster에 카메라 적용
+        raycaster.setFromCamera(mouse, cameraController.camera);
+
+        // 클릭된 객체 찾기 (scene 전체)
+        const intersects = raycaster.intersectObjects(scene.children, true);
+        if (intersects.length === 0) {
+            console.log("[DEBUG] no hit");
+            return;
+        }
+
+        const hit = intersects[0].object
+        const region = hit.userData.region;
+
+        if (!region) {
+            console.log("[DEBUG] hit but no region:", hit);
+            return;
+        }
+
+        console.log("[DEBUG] hit region:", region);
+
+        switch (region) {
+            case "sea":
+                cameraController.switchCamera("sea", new THREE.Vector3(-3, 2, 6));
+                break;
+
+            case "desert":
+                cameraController.switchCamera("desert", new THREE.Vector3(6, 2, 0));
+                break;
+
+            case "prairie":
+                cameraController.switchCamera("prairie", new THREE.Vector3(-3, 2, -5));
+                break;
+
+        }
+
+    }
 
     function resizeRendererToDisplaySize(renderer) {
         const canvas = renderer.domElement;
@@ -88,7 +131,9 @@ export default function MainScene() {
             camera.updateProjectionMatrix();
         }
 
-        renderer.render(scene, camera);
+        renderer.render(scene, cameraController.camera);
+
+        cameraController.update();
         requestAnimationFrame(render);
     }
 

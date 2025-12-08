@@ -140,7 +140,7 @@ const EastLayOut2 = [
     {type: 'sand-desert', position: hexPosition(1, 4, 0)},
     {type: 'sand-desert', position: hexPosition(2, 4, 0)},
     {type: 'sand-desert', position: hexPosition(3, 4, 0)},
-    {type: 'water', position: hexPosition(4, 4, 0)},
+    {type: 'water', position: hexPosition(4, 4, 0.1)},
     {type: 'sand', position: hexPosition(5, 4, 0)},
     {type: 'sand', position: hexPosition(6, 4, 0)},
     {type: 'building-mine', position: hexPosition(7, 4, 0)},
@@ -212,6 +212,12 @@ export async function loadEastModels(scene) {
         if (item.dir) {
             object.rotation.y = getRotation(item.dir);
         }
+
+        object.traverse(child => {
+            if (child.isMesh) {
+                child.userData.region = "desert";
+            }
+        });
         scene.add(object);
     }
 
