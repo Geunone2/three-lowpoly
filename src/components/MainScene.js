@@ -9,18 +9,24 @@ import {loadEastBuildingModels} from "./Loaders/Layer2/loadEastBuildingObj.jsx";
 import {WeatherController} from "./Effect/EffectController.js"
 import CameraController from "./Camera/CameraController.jsx";
 import DefaultCamera from "./Camera/DefaultCamera.jsx";
-import addGlobalLight from "./Light/LightController.jsx";
+import {LightController} from "./Light/LightController.jsx";
 
 let weatherController;
+let lightController;
 
 export function changeWeather(type) {  // ← UI에서 이 함수 사용
     weatherController?.setWeather(type);
 }
 
+export function changeTime(type) {
+    lightController?.setLight(type);
+}
+
 export default function MainScene() {
     // ✅ Renderer 설정
     const canvas = document.querySelector('#c');
-    const renderer = new THREE.WebGLRenderer({antialias: true, canvas, alpha: true,});
+    const renderer = new THREE.WebGLRenderer({antialias: true, canvas});
+    renderer.setClearColor(0x000000, 0);
 
     const {camera} = DefaultCamera();
 
@@ -33,12 +39,7 @@ export default function MainScene() {
     const cameraController = new CameraController(camera, renderer, cameraGroup);
 
     // 조명 추가
-    const {ambientLight, dirLight} = addGlobalLight(scene);
-    ambientLight.color.set(0xffffff);
-    ambientLight.intensity = 2;
-
-    dirLight.color.set(0xffffff);
-    dirLight.intensity = 1.2;
+    lightController = new LightController(scene, renderer, cameraController.camera);
 
     loadRiverModels(scene);
 
@@ -76,19 +77,11 @@ export default function MainScene() {
         // 클릭된 객체 찾기 (scene 전체)
         const intersects = raycaster.intersectObjects(scene.children, true);
         if (intersects.length === 0) {
-            console.log("[DEBUG] no hit");
             return;
         }
 
         const hit = intersects[0].object
         const region = hit.userData.region;
-
-        if (!region) {
-            console.log("[DEBUG] hit but no region:", hit);
-            return;
-        }
-
-        console.log("[DEBUG] hit region:", region);
 
         switch (region) {
             case "sea":
