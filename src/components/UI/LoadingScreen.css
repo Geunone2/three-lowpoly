@@ -1,0 +1,135 @@
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #8fdbff 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.loading-content {
+    text-align: center;
+    color: white;
+    max-width: 600px;
+    padding: 40px;
+}
+
+/* 프로젝트 소개 */
+.project-intro {
+    margin-bottom: 60px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.project-intro h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.project-intro p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    opacity: 0.95;
+}
+
+.project-intro .subtitle {
+    font-size: 1rem;
+    opacity: 0.85;
+    line-height: 1.6;
+}
+
+/* Progress Bar */
+.progress-container {
+    margin-bottom: 40px;
+    animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+.progress-bar-wrapper {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 20px rgba(79, 172, 254, 0.6);
+}
+
+.progress-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* 버튼 */
+.enter-button {
+    padding: 16px 48px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.enter-button.disabled {
+    background: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.6);
+    cursor: not-allowed;
+    transform: scale(0.95);
+}
+
+.enter-button.active {
+    background: white;
+    color: #667eea;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.enter-button.active:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.enter-button.active:active {
+    transform: translateY(-1px);
+}
+
+/* 애니메이션 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
