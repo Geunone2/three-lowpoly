@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 export default class RainEffect {
-    constructor(scene, count = 1000) {
+    constructor(scene, count = 500) {
         this.scene = scene;
         this.count = count;
         this.dummy = new THREE.Object3D();
@@ -17,7 +17,7 @@ export default class RainEffect {
                 x: (Math.random() - 0.5) * 20,
                 y: Math.random() * 20 + 10,
                 z: (Math.random() - 0.5) * 20,
-                speed: Math.random() * 0.15 + 0.05,
+                speed: Math.random() * 0.1 + 0.03,
             });
         }
     }
@@ -38,7 +38,7 @@ export default class RainEffect {
     update() {
         this.particles.forEach((p, i) => {
             p.y -= p.speed;
-            if (p.y < -1) p.y = 20;
+            if (p.y < 0) p.y = 20;
 
             this.dummy.position.set(p.x, p.y, p.z);
             this.dummy.updateMatrix();

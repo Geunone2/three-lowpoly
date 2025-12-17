@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 export default class SnowEffect {
-    constructor(scene, count = 800) {
+    constructor(scene, count = 400) {
         this.scene = scene;
         this.count = count;
         this.dummy = new THREE.Object3D();
@@ -18,7 +18,7 @@ export default class SnowEffect {
                 x: (Math.random() - 0.5) * 20,
                 y: Math.random() * 20 + 10,
                 z: (Math.random() - 0.5) * 20,
-                speed: Math.random() * 0.03 + 0.01,
+                speed: Math.random() * 0.02 + 0.005,
                 drift: Math.random() * 0.02 + 0.005,
             });
         }
@@ -44,7 +44,7 @@ export default class SnowEffect {
             p.y -= p.speed;
             p.x += Math.sin(elapsedTime + i) * p.drift;
 
-            if (p.y < -1) {
+            if (p.y < 0) {
                 p.y = 20;
                 p.x = (Math.random() - 0.5) * 20;
             }

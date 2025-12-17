@@ -1,0 +1,620 @@
+[
+  {
+    "type": "sand",
+    "q": 0,
+    "r": -1,
+    "y": 0.1
+  },
+  {
+    "type": "building-tower",
+    "q": 0,
+    "r": -1,
+    "y": 0.3
+  },
+  {
+    "type": "grass",
+    "q": -1,
+    "r": -1,
+    "y": 0.2
+  },
+  {
+    "type": "building-wall",
+    "q": -1,
+    "r": -1,
+    "y": 0.3
+  },
+  {
+    "type": "grass-hill",
+    "q": -2,
+    "r": -1,
+    "y": 0.1
+  },
+  {
+    "type": "path-straight",
+    "q": -3,
+    "r": -1,
+    "y": 0.2,
+    "dir": "NE"
+  },
+  {
+    "type": "path-square-end",
+    "q": -6,
+    "r": -1,
+    "y": 0.2,
+    "dir": "NE"
+  },
+  {
+    "type": "grass-hill",
+    "q": -7,
+    "r": -1,
+    "y": 0.2
+  },
+  {
+    "type": "grass-forest",
+    "q": -10,
+    "r": -1,
+    "y": 0.2
+  },
+  {
+    "type": "path-end",
+    "q": -8,
+    "r": -2,
+    "y": 0.2,
+    "dir": "S"
+  },
+  {
+    "type": "path-straight",
+    "q": -7,
+    "r": -2,
+    "y": 0.2,
+    "dir": "S"
+  },
+  {
+    "type": "path-intersectionD",
+    "q": -6,
+    "r": -2,
+    "y": 0.2,
+    "dir": "N"
+  },
+  {
+    "type": "path-corner",
+    "q": -5,
+    "r": -2,
+    "y": 0.2,
+    "dir": "N"
+  },
+  {
+    "type": "building-wizard-tower",
+    "q": -4,
+    "r": -2,
+    "y": 0.2
+  },
+  {
+    "type": "path-straight",
+    "q": -3,
+    "r": -2,
+    "y": 0.2,
+    "dir": "SW"
+  },
+  {
+    "type": "grass",
+    "q": 1,
+    "r": -2,
+    "y": 0.2
+  },
+  {
+    "type": "building-wall",
+    "q": 1,
+    "r": -2,
+    "y": 0.3,
+    "dir": "S"
+  },
+  {
+    "type": "grass",
+    "q": 0,
+    "r": -2,
+    "y": 0.1,
+    "dir": "W"
+  },
+  {
+    "type": "building-wall",
+    "q": 0,
+    "r": -2,
+    "y": 0.2,
+    "dir": "W"
+  },
+  {
+    "type": "unit-mill",
+    "q": -6,
+    "r": -3,
+    "y": 0.2,
+    "dir": "W"
+  },
+  {
+    "type": "path-straight",
+    "q": -5,
+    "r": -3,
+    "y": 0.2,
+    "dir": "SE"
+  },
+  {
+    "type": "path-corner",
+    "q": -4,
+    "r": -3,
+    "y": 0.2,
+    "dir": "S"
+  },
+  {
+    "type": "path-intersectionD",
+    "q": -3,
+    "r": -3,
+    "y": 0.2,
+    "dir": "N"
+  },
+  {
+    "type": "path-straight",
+    "q": -2,
+    "r": -3,
+    "y": 0.2
+  },
+  {
+    "type": "building-smelter",
+    "q": -1,
+    "r": -3,
+    "y": 0.1
+  },
+  {
+    "type": "building-cabin",
+    "q": -7,
+    "r": -4,
+    "y": 0.1,
+    "dir": "S"
+  },
+  {
+    "type": "path-straight",
+    "q": -6,
+    "r": -4,
+    "y": 0.2
+  },
+  {
+    "type": "path-straight",
+    "q": -5,
+    "r": -4,
+    "y": 0.2
+  },
+  {
+    "type": "path-corner-sharp",
+    "q": -4,
+    "r": -4,
+    "y": 0.2,
+    "dir": "NW"
+  },
+  {
+    "type": "stone-hill",
+    "q": -3,
+    "r": -4,
+    "y": 0.2
+  },
+  {
+    "type": "path-straight",
+    "q": -2,
+    "r": -4,
+    "y": 0.2,
+    "dir": "NW"
+  },
+  {
+    "type": "unit-mansion",
+    "q": -1,
+    "r": -4,
+    "y": 0.2,
+    "dir": "E"
+  },
+  {
+    "type": "unit-house",
+    "q": 2,
+    "r": -4,
+    "y": 0.2,
+    "dir": "SE"
+  },
+  {
+    "type": "path-corner-sharp",
+    "q": 3,
+    "r": -5,
+    "y": 0.2,
+    "dir": "NE"
+  },
+  {
+    "type": "grass-hill",
+    "q": -3,
+    "r": -5,
+    "y": 0.1
+  },
+  {
+    "type": "grass-forest",
+    "q": -4,
+    "r": -5,
+    "y": 0.1
+  },
+  {
+    "type": "grass-forest",
+    "q": -5,
+    "r": -5,
+    "y": 0.1
+  },
+  {
+    "type": "path-corner",
+    "q": 4,
+    "r": -6,
+    "y": 0.2,
+    "dir": "S"
+  },
+  {
+    "type": "building-tower",
+    "q": -3,
+    "r": -6,
+    "y": 0.1
+  },
+  {
+    "type": "path-straight",
+    "q": 2,
+    "r": -6,
+    "y": 0.2
+  },
+  {
+    "type": "path-intersectionF",
+    "q": 3,
+    "r": -6,
+    "y": 0.2,
+    "dir": "SE"
+  },
+  {
+    "type": "path-straight",
+    "q": 4,
+    "r": -7,
+    "y": 0.2,
+    "dir": "SE"
+  },
+  {
+    "type": "unit-house",
+    "q": -3,
+    "r": -8,
+    "y": 0.2,
+    "dir": "S"
+  },
+  {
+    "type": "path-straight",
+    "q": -2,
+    "r": -8,
+    "y": 0.2,
+    "dir": "S"
+  },
+  {
+    "type": "path-intersectionH",
+    "q": -1,
+    "r": -8,
+    "y": 0.2
+  },
+  {
+    "type": "path-straight",
+    "q": 0,
+    "r": -8,
+    "y": 0.2,
+    "dir": "S"
+  },
+  {
+    "type": "path-intersectionF",
+    "q": 1,
+    "r": -8,
+    "y": 0.2
+  },
+  {
+    "type": "path-straight",
+    "q": 5,
+    "r": -8,
+    "y": 0.2,
+    "dir": "SE"
+  },
+  {
+    "type": "unit-tower",
+    "q": -2,
+    "r": -9,
+    "y": 0.2
+  },
+  {
+    "type": "stone",
+    "q": -1,
+    "r": -9,
+    "y": 0.1
+  },
+  {
+    "type": "stone",
+    "q": 0,
+    "r": -9,
+    "y": 0.1
+  },
+  {
+    "type": "unit-mill",
+    "q": 1,
+    "r": -9,
+    "y": 0.1,
+    "dir": "SW"
+  },
+  {
+    "type": "path-corner",
+    "q": 2,
+    "r": -9,
+    "y": 0.2,
+    "dir": "NW"
+  },
+  {
+    "type": "dirt",
+    "q": 6,
+    "r": -9,
+    "y": 0.4
+  },
+  {
+    "type": "dirt",
+    "q": 6,
+    "r": -9,
+    "y": 0.3
+  },
+  {
+    "type": "dirt",
+    "q": 7,
+    "r": -9,
+    "y": 0.3
+  },
+  {
+    "type": "path-corner",
+    "q": 8,
+    "r": -9,
+    "y": 0.2
+  },
+  {
+    "type": "grass",
+    "q": -1,
+    "r": -10,
+    "y": 0.2
+  },
+  {
+    "type": "building-walls",
+    "q": -1,
+    "r": -10,
+    "y": 0.3
+  },
+  {
+    "type": "stone",
+    "q": 0,
+    "r": -10,
+    "y": 0.2
+  },
+  {
+    "type": "stone",
+    "q": 1,
+    "r": -10,
+    "y": 0.1
+  },
+  {
+    "type": "path-intersectionG",
+    "q": 2,
+    "r": -10,
+    "y": 0.2
+  },
+  {
+    "type": "path-corner",
+    "q": 3,
+    "r": -10,
+    "y": 0.2,
+    "dir": "N"
+  },
+  {
+    "type": "building-cabin",
+    "q": 6,
+    "r": -10,
+    "y": 0.4,
+    "dir": "SW"
+  },
+  {
+    "type": "dirt",
+    "q": 6,
+    "r": -10,
+    "y": 0.4
+  },
+  {
+    "type": "dirt",
+    "q": 6,
+    "r": -10,
+    "y": 0.3
+  },
+  {
+    "type": "building-mine",
+    "q": 7,
+    "r": -10,
+    "y": 0.4,
+    "dir": "NW"
+  },
+  {
+    "type": "dirt",
+    "q": 7,
+    "r": -10,
+    "y": 0.4
+  },
+  {
+    "type": "dirt",
+    "q": 7,
+    "r": -10,
+    "y": 0.3
+  },
+  {
+    "type": "dirt-lumber",
+    "q": 8,
+    "r": -10,
+    "y": 0.6
+  },
+  {
+    "type": "dirt",
+    "q": 8,
+    "r": -10,
+    "y": 0.5
+  },
+  {
+    "type": "dirt",
+    "q": 8,
+    "r": -10,
+    "y": 0.4
+  },
+  {
+    "type": "dirt",
+    "q": 8,
+    "r": -10,
+    "y": 0.3
+  },
+  {
+    "type": "path-square-end",
+    "q": 9,
+    "r": -10,
+    "y": 0.2,
+    "dir": "NW"
+  },
+  {
+    "type": "stone-hill",
+    "q": 9,
+    "r": -11,
+    "y": 0.6
+  },
+  {
+    "type": "dirt",
+    "q": 9,
+    "r": -11,
+    "y": 0.5
+  },
+  {
+    "type": "dirt",
+    "q": 9,
+    "r": -11,
+    "y": 0.4
+  },
+  {
+    "type": "dirt",
+    "q": 9,
+    "r": -11,
+    "y": 0.3
+  },
+  {
+    "type": "stone-mountain",
+    "q": 8,
+    "r": -11,
+    "y": 0.8
+  },
+  {
+    "type": "dirt",
+    "q": 8,
+    "r": -11,
+    "y": 0.7
+  },
+  {
+    "type": "dirt",
+    "q": 8,
+    "r": -11,
+    "y": 0.6
+  },
+  {
+    "type": "dirt",
+    "q": 8,
+    "r": -11,
+    "y": 0.5
+  },
+  {
+    "type": "dirt",
+    "q": 8,
+    "r": -11,
+    "y": 0.4
+  },
+  {
+    "type": "dirt",
+    "q": 8,
+    "r": -11,
+    "y": 0.3
+  },
+  {
+    "type": "stone-rocks",
+    "q": 7,
+    "r": -11,
+    "y": 0.8
+  },
+  {
+    "type": "dirt",
+    "q": 7,
+    "r": -11,
+    "y": 0.7
+  },
+  {
+    "type": "dirt",
+    "q": 7,
+    "r": -11,
+    "y": 0.6
+  },
+  {
+    "type": "dirt",
+    "q": 7,
+    "r": -11,
+    "y": 0.5
+  },
+  {
+    "type": "dirt",
+    "q": 7,
+    "r": -11,
+    "y": 0.4
+  },
+  {
+    "type": "dirt",
+    "q": 7,
+    "r": -11,
+    "y": 0.3
+  },
+  {
+    "type": "unit-mansion",
+    "q": 4,
+    "r": -11,
+    "y": 0.2,
+    "dir": "NW"
+  },
+  {
+    "type": "unit-mansion",
+    "q": 3,
+    "r": -11,
+    "y": 0.2,
+    "dir": "W"
+  },
+  {
+    "type": "unit-tower",
+    "q": 2,
+    "r": -11,
+    "y": 0.2
+  },
+  {
+    "type": "grass",
+    "q": 1,
+    "r": -11,
+    "y": 0.2
+  },
+  {
+    "type": "building-walls",
+    "q": 1,
+    "r": -11,
+    "y": 0.3
+  },
+  {
+    "type": "sand",
+    "q": 0,
+    "r": -11,
+    "y": 0.2
+  },
+  {
+    "type": "building-castle",
+    "q": 0,
+    "r": -11,
+    "y": 0.4,
+    "dir": "SW"
+  }
+]

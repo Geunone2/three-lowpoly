@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #background {
@@ -9,7 +10,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* 가장 아래 */
+    z-index: 0;
 }
 
 #c {
@@ -22,48 +23,255 @@ html, body {
     z-index: 1;
 }
 
-.weather-select {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+/* UI Controls 컨테이너 */
+.ui-controls {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
     display: flex;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 8px 12px;
-    border-radius: 8px;
-    z-index: 2;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.ui-controls.visible {
+    opacity: 1;
     pointer-events: auto;
 }
 
-.weather-select button {
-    font-size: 24px;
-    background: transparent;
-    border: none;
+/* 공통 컨테이너 스타일 */
+.weather-select-container,
+.time-select-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* 공통 토글 버튼 스타일 */
+.weather-toggle,
+.time-toggle {
+    width: 64px;
+    height: 64px;
+    background: rgba(30, 30, 30, 0.85);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
     cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.weather-select button:hover {
-    transform: scale(1.2);
-}
-
-.time-select {
-    position: absolute;
-    top: 20px;
-    right: 20px; /* ← 우측 고정 */
-    background: rgba(255, 255, 255, 0.8);
-    padding: 6px 10px;
-    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
     z-index: 2;
 }
 
-.time-select button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s;
+.weather-toggle:hover,
+.time-toggle:hover {
+    background: rgba(40, 40, 40, 0.9);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.4);
 }
 
-.time-select button:hover {
-    transform: scale(1.2);
+.weather-toggle:active,
+.time-toggle:active {
+    transform: scale(0.98);
+}
+
+.toggle-icon {
+    font-size: 28px;
+    line-height: 1;
+}
+
+.toggle-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* 옵션 컨테이너 - 우측으로 펼쳐짐 */
+.weather-options,
+.time-options {
+    position: absolute;
+    left: 76px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 8px;
+    background: rgba(30, 30, 30, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 8px;
+    border-radius: 32px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%) translateX(-20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.weather-options.open,
+.time-options.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-50%) translateX(0);
+}
+
+/* 개별 옵션 버튼 */
+.weather-option,
+.time-option {
+    width: 56px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.weather-option:hover,
+.time-option:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.weather-option:active,
+.time-option:active {
+    transform: scale(0.95);
+}
+
+/* 활성화된 옵션 */
+.weather-option.active,
+.time-option.active {
+    background: rgba(100, 181, 246, 0.3);
+    border-color: rgba(100, 181, 246, 0.6);
+    box-shadow: 0 0 20px rgba(100, 181, 246, 0.4);
+}
+
+.option-emoji,
+.option-icon {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.time-option.day .option-icon {
+    color: #FFA726;
+}
+
+.time-option.night .option-icon {
+    color: #7E57C2;
+}
+
+.time-option.day.active .option-icon {
+    color: #FFB74D;
+}
+
+.time-option.night.active .option-icon {
+    color: #9575CD;
+}
+
+.option-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.weather-option.active .option-label,
+.time-option.active .option-label {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* 애니메이션 효과 */
+.weather-options.open .weather-option,
+.time-options.open .time-option {
+    animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+}
+
+.weather-options.open .weather-option:nth-child(1),
+.time-options.open .time-option:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.weather-options.open .weather-option:nth-child(2),
+.time-options.open .time-option:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.weather-options.open .weather-option:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.weather-options.open .weather-option:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .ui-controls {
+        bottom: 16px;
+        left: 16px;
+        gap: 10px;
+    }
+
+    .weather-toggle,
+    .time-toggle {
+        width: 56px;
+        height: 56px;
+    }
+
+    .toggle-icon {
+        font-size: 24px;
+    }
+
+    .toggle-label {
+        font-size: 10px;
+    }
+
+    .weather-option,
+    .time-option {
+        width: 48px;
+        height: 48px;
+    }
+
+    .option-emoji,
+    .option-icon {
+        font-size: 20px;
+    }
+
+    .option-label {
+        font-size: 9px;
+    }
+
+    .weather-options,
+    .time-options {
+        left: 68px;
+    }
 }

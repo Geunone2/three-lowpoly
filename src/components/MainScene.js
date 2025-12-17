@@ -7,9 +7,10 @@ import {loadNorthBuildingModels} from "./Loaders/Layer2/loadNorthBuildingObj.jsx
 import {loadEastModels} from "./Loaders/Layer1/loadEastObj.jsx";
 import {loadEastBuildingModels} from "./Loaders/Layer2/loadEastBuildingObj.jsx";
 import {WeatherController} from "./Effect/EffectController.js"
-import CameraController from "./Camera/CameraController.jsx";
+import CameraController from "./Camera/CameraController.js";
 import DefaultCamera from "./Camera/DefaultCamera.jsx";
 import {LightController} from "./Light/LightController.jsx";
+import {LoadingManager} from "../utils/LoadingManager.js";
 
 let weatherController;
 let lightController;
@@ -22,7 +23,7 @@ export function changeTime(type) {
     lightController?.setLight(type);
 }
 
-export default function MainScene() {
+export default function MainScene({onProgress, onLoaded}) {
     // ✅ Renderer 설정
     const canvas = document.querySelector('#c');
     const renderer = new THREE.WebGLRenderer({antialias: true, canvas});
@@ -41,22 +42,24 @@ export default function MainScene() {
     // 조명 추가
     lightController = new LightController(scene, renderer, cameraController.camera);
 
-    loadRiverModels(scene);
+    const manager = LoadingManager({onProgress, onLoad: onLoaded});
+
+    loadRiverModels(scene, manager);
 
     // E 방향
-    loadEastModels(scene);
-    loadEastBuildingModels(scene);
+    loadEastModels(scene, manager);
+    loadEastBuildingModels(scene, manager);
 
     // SW 방향
-    loadSWModels(scene);
-    loadSWBuildingModels(scene);
+    loadSWModels(scene, manager);
+    loadSWBuildingModels(scene, manager);
 
     // N 방향
-    loadNorthModels(scene);
-    loadNorthBuildingModels(scene);
+    loadNorthModels(scene, manager);
+    loadNorthBuildingModels(scene, manager);
 
     // 기상 효과 변화
-    weatherController = new WeatherController(scene);
+    weatherController = new WeatherController(scene, manager);
 
     const clock = new THREE.Clock();
 
@@ -96,6 +99,8 @@ export default function MainScene() {
                 cameraController.switchCamera("prairie", new THREE.Vector3(-3, 2, -5));
                 break;
 
+            case "none":
+                break;
         }
 
     }

@@ -1,0 +1,299 @@
+[
+  {
+    "type": "sand",
+    "q": 10,
+    "r": -9,
+    "y": 0.1
+  },
+  {
+    "type": "sand",
+    "q": 10,
+    "r": -8,
+    "y": 0.2
+  },
+  {
+    "type": "sand-rocks",
+    "q": 9,
+    "r": -7,
+    "y": 0.3
+  },
+  {
+    "type": "sand",
+    "q": 9,
+    "r": -7,
+    "y": 0.1
+  },
+  {
+    "type": "sand-desert",
+    "q": 10,
+    "r": -7,
+    "y": 0.2
+  },
+  {
+    "type": "sand-desert",
+    "q": 8,
+    "r": -6,
+    "y": 0.3
+  },
+  {
+    "type": "sand",
+    "q": 8,
+    "r": -6,
+    "y": 0.1
+  },
+  {
+    "type": "sand-desert",
+    "q": 9,
+    "r": -6,
+    "y": 0.4
+  },
+  {
+    "type": "sand",
+    "q": 9,
+    "r": -6,
+    "y": 0.2
+  },
+  {
+    "type": "sand-desert",
+    "q": 10,
+    "r": -6,
+    "y": 0.3
+  },
+  {
+    "type": "sand",
+    "q": 10,
+    "r": -6,
+    "y": 0.1
+  },
+  {
+    "type": "unit-tower",
+    "q": 8,
+    "r": -5,
+    "y": 0.5
+  },
+  {
+    "type": "sand",
+    "q": 8,
+    "r": -5,
+    "y": 0.3
+  },
+  {
+    "type": "sand",
+    "q": 8,
+    "r": -5,
+    "y": 0.1
+  },
+  {
+    "type": "sand-desert",
+    "q": 9,
+    "r": -5,
+    "y": 0.6
+  },
+  {
+    "type": "sand",
+    "q": 9,
+    "r": -5,
+    "y": 0.4
+  },
+  {
+    "type": "sand",
+    "q": 9,
+    "r": -5,
+    "y": 0.2
+  },
+  {
+    "type": "sand-rocks",
+    "q": 10,
+    "r": -5,
+    "y": 0.5
+  },
+  {
+    "type": "sand",
+    "q": 10,
+    "r": -5,
+    "y": 0.3
+  },
+  {
+    "type": "sand",
+    "q": 10,
+    "r": -5,
+    "y": 0.1
+  },
+  {
+    "type": "sand",
+    "q": 6,
+    "r": -4,
+    "y": 0.3
+  },
+  {
+    "type": "sand",
+    "q": 6,
+    "r": -4,
+    "y": 0.1
+  },
+  {
+    "type": "sand-rocks",
+    "q": 7,
+    "r": -4,
+    "y": 0.4
+  },
+  {
+    "type": "sand",
+    "q": 7,
+    "r": -4,
+    "y": 0.2
+  },
+  {
+    "type": "sand-desert",
+    "q": 8,
+    "r": -4,
+    "y": 0.3
+  },
+  {
+    "type": "sand",
+    "q": 8,
+    "r": -4,
+    "y": 0.1
+  },
+  {
+    "type": "sand",
+    "q": 9,
+    "r": -4,
+    "y": 0.2
+  },
+  {
+    "type": "sand",
+    "q": 5,
+    "r": -3,
+    "y": 0.1
+  },
+  {
+    "type": "unit-tower",
+    "q": 6,
+    "r": -3,
+    "y": 0.4
+  },
+  {
+    "type": "sand",
+    "q": 6,
+    "r": -3,
+    "y": 0.2
+  },
+  {
+    "type": "sand-desert",
+    "q": 7,
+    "r": -3,
+    "y": 0.3
+  },
+  {
+    "type": "sand-desert",
+    "q": 7,
+    "r": -3,
+    "y": 0.1
+  },
+  {
+    "type": "sand-rocks",
+    "q": 8,
+    "r": -3,
+    "y": 0.2
+  },
+  {
+    "type": "sand-rocks",
+    "q": 5,
+    "r": -2,
+    "y": 0.1
+  },
+  {
+    "type": "sand",
+    "q": 6,
+    "r": -2,
+    "y": 0.1
+  },
+  {
+    "type": "sand-desert",
+    "q": 7,
+    "r": -2,
+    "y": 0.1
+  },
+  {
+    "type": "sand-desert",
+    "q": 8,
+    "r": -2,
+    "y": 0.1
+  },
+  {
+    "type": "unit-mill",
+    "q": 10,
+    "r": -3,
+    "y": 0.2,
+    "dir": "SW"
+  },
+  {
+    "type": "unit-tree",
+    "q": 11,
+    "r": -3,
+    "y": 0.2
+  },
+  {
+    "type": "unit-tree",
+    "q": 9,
+    "r": -2,
+    "y": 0.2
+  },
+  {
+    "type": "unit-ship",
+    "q": 8,
+    "r": 0,
+    "y": 0.2
+  },
+  {
+    "type": "unit-tree",
+    "q": 10,
+    "r": 0,
+    "y": 0.2
+  },
+  {
+    "type": "unit-house",
+    "q": 7,
+    "r": 1,
+    "y": 0.2
+  },
+  {
+    "type": "unit-tower",
+    "q": 4,
+    "r": 2,
+    "y": 0.2
+  },
+  {
+    "type": "path-corner",
+    "q": 5,
+    "r": 4,
+    "y": 0.2,
+    "dir": "S"
+  },
+  {
+    "type": "path-straight",
+    "q": 6,
+    "r": 4,
+    "y": 0.2
+  },
+  {
+    "type": "path-intersectionD",
+    "q": 4,
+    "r": 5,
+    "y": 0.2
+  },
+  {
+    "type": "path-straight",
+    "q": 5,
+    "r": 5,
+    "y": 0.2
+  },
+  {
+    "type": "path-corner",
+    "q": 4,
+    "r": 6,
+    "y": 0.2,
+    "dir": "NE"
+  }
+]
