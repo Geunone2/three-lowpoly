@@ -1,16 +1,327 @@
-# React + Vite
+# 🏝️ Three.js Low Poly Island
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://three-lowpoly.vercel.app/)
+[![Three.js](https://img.shields.io/badge/Three.js-v0.181.1-blue)](https://threejs.org/)
+[![React](https://img.shields.io/badge/React-v19.2.0-61dafb)](https://react.dev/)
 
-Currently, two official plugins are available:
+Three.js와 React로 구현한 인터랙티브 로우폴리 3D 섬 프로젝트입니다. 바다, 사막, 초원 세 가지 생태계를 탐험하고, 실시간 날씨와 시간대를 변경하며 다양한 분위기를 경험할 수 있습니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**🎮 [라이브 데모 보기](https://three-lowpoly.vercel.app/)**
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📸 미리보기
 
-## Expanding the ESLint configuration
+> 💡 **Tip**: 각 지역을 클릭하여 가까이에서 탐험해보세요!
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 메인 뷰
+회전하는 섬 전경과 세 가지 독특한 생태계
+
+### 지역별 카메라 뷰
+- **🌊 바다**: 등대, 항구, 선박이 있는 해양 지역
+- **🏜️ 사막**: 선인장, 광산, 사막 마을
+- **🌾 초원**: 울창한 숲, 양 농장, 자연 경관
+
+### 날씨 효과
+- **☀️ 맑음**: 맑은 하늘과 선명한 그림자
+- **🌧️ 비**: 1200개의 빗방울 파티클
+- **❄️ 눈**: 800개의 눈송이 + 하얀 겨울 텍스처
+- **🌫️ 안개**: 신비로운 안개 효과
+
+---
+
+## ✨ 주요 기능
+
+### 🎥 지역별 카메라 시스템
+- **3개 지역 탐험**: 바다, 사막, 초원을 클릭하여 자유롭게 이동
+- **부드러운 전환**: GSAP 애니메이션으로 2초간 자연스러운 카메라 이동
+- **통일된 시야각**: 각 지역을 원점에서 동일한 거리와 높이로 바라봄
+- **OrbitControls**: 메인 뷰에서 마우스로 자유로운 회전 및 줌 제어
+  - 줌 거리 제한: 30-80 units
+  - 수직 각도 제한: 지면 아래 차단
+  - 패닝 비활성화
+
+### 🌫️ Fog 효과 시스템
+- **선택 지역 강조**: 클릭한 지역만 선명하게 표시
+- **FogExp2 안개**: 지수 함수 기반 자연스러운 안개 효과
+- **동적 애니메이션**: 카메라 전환과 동기화된 2초 안개 페이드 인/아웃
+
+### 🌦️ 실시간 날씨 효과
+- **4가지 날씨**: 맑음, 비, 눈, 안개
+- **파티클 시스템**: InstancedMesh 기반 최적화된 비/눈 효과
+- **페이드 전환**: 날씨 변경 시 2초 부드러운 페이드 아웃
+- **눈 효과 특별 기능**:
+  - 눈이 내린 후 6.5초 뒤 지형 텍스처가 하얗게 변함
+  - 다른 날씨로 변경 시 4초 후 원본 텍스처 복원
+  - 0.5초 페이드 효과로 부드러운 텍스처 전환
+
+### 🌓 시간대 시스템
+- **낮/밤 전환**: 동적 조명 변경
+
+### 💡 인터랙티브 UI
+- **지역 정보 카드**: 
+  - 상단 슬라이드 형태로 열고 닫기
+  - 지역별 색상 테마 (그라데이션)
+  - 반응형 디자인 (데스크톱: 60%, 모바일: 전체)
+- **뒤로가기 버튼**: 지역 뷰에서 메인 뷰로 즉시 복귀
+- **날씨/시간 선택 UI**: 우측 하단 컨트롤 패널
+- **로딩 화면**: 진행도 표시 및 부드러운 페이드 인
+
+---
+
+## 🛠️ 기술 스택
+
+### Core
+- **Three.js** `v0.181.1` - 3D 렌더링 엔진
+- **React** `v19.2.1` - UI 프레임워크
+- **Vite** `v7.2.2` - 빌드 도구
+
+### Animation & Effects
+- **GSAP** `v3.13.0` - 애니메이션 라이브러리
+- **OrbitControls** - 카메라 제어
+- **FogExp2** - 지수 안개 효과
+
+### UI Components
+- **react-icons** `v5.5.0` - 아이콘 라이브러리
+- **CSS3** - 애니메이션 및 스타일링
+
+### Deployment
+- **Vercel** - 자동 배포 및 호스팅
+
+### 3D Assets
+- **Kenney Hexagon Kit** - 로우폴리 3D 모델
+
+---
+
+## 🚀 시작하기
+
+### 사전 요구사항
+- Node.js v18 이상
+- npm 또는 pnpm
+
+### 설치 및 실행
+
+```bash
+# 저장소 클론
+git clone https://github.com/yourusername/three-lowpoly.git
+cd three-lowpoly
+
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
+npm run dev
+```
+
+브라우저에서 `http://localhost:5173`을 열어 확인하세요.
+
+### 빌드 및 배포
+
+```bash
+# 프로덕션 빌드
+npm run build
+
+# 빌드 미리보기
+npm run preview
+```
+
+---
+
+## 📁 프로젝트 구조
+
+```
+three-lowpoly/
+├── public/
+│   └── assets/
+│       └── hexagon-kit/              # 3D 모델 및 텍스처
+│           ├── Models/
+│           │   └── OBJ/
+│           │       ├── Textures/     # colormap, colormap2
+│           │       ├── building/     # 건물 모델
+│           │       ├── nature/       # 자연 오브젝트
+│           │       └── tiles/        # 지형 타일
+├── src/
+│   ├── components/
+│   │   ├── Camera/
+│   │   │   ├── CameraController.js  # 카메라 제어 로직
+│   │   │   ├── DefaultCamera.jsx    # 초기 카메라 설정
+│   │   │   └── LightCamera.jsx      # 조명용 카메라
+│   │   ├── Effect/
+│   │   │   ├── EffectController.js  # 날씨 관리 시스템
+│   │   │   ├── RainEffect.js        # 비 파티클 효과
+│   │   │   ├── SnowEffect.js        # 눈 파티클 효과
+│   │   │   ├── FogEffect.js         # 안개 효과
+│   │   │   └── DefaultEffect.js     # 기본 상태
+│   │   ├── Light/
+│   │   │   ├── LightController.jsx  # 조명 관리
+│   │   │   ├── sunLight.jsx         # 낮 조명
+│   │   │   └── nightLight.jsx       # 밤 조명
+│   │   ├── Loaders/
+│   │   │   ├── Layer1/              # Ground 모델 로더
+│   │   │   │   ├── loadEastObj.jsx
+│   │   │   │   ├── loadNorthObj.jsx
+│   │   │   │   ├── loadSWObj.jsx
+│   │   │   │   └── loadRiverObj.jsx
+│   │   │   ├── Layer2/              # Building 모델 로더
+│   │   │   │   ├── loadEastBuildingObj.jsx
+│   │   │   │   ├── loadNorthBuildingObj.jsx
+│   │   │   │   └── loadSWBuildingObj.jsx
+│   │   │   └── maps/                # JSON 지형 맵
+│   │   │       ├── east/            # 사막 지역
+│   │   │       ├── north/           # 초원 지역
+│   │   │       └── southWest/       # 바다 지역
+│   │   ├── Scene/
+│   │   │   └── BlurScene.jsx        # Fog 효과 관리
+│   │   ├── Texture/
+│   │   │   └── textureManager.jsx   # 텍스처 교체 시스템
+│   │   ├── UI/
+│   │   │   ├── CameraDescription.jsx     # 지역 정보 카드
+│   │   │   ├── CameraDescription.css
+│   │   │   ├── BackButton.jsx            # 뒤로가기 버튼
+│   │   │   ├── BackButton.css
+│   │   │   ├── SelectEffect.jsx          # 날씨 선택
+│   │   │   ├── SelectTime.jsx            # 시간대 선택
+│   │   │   ├── LoadingScreen.jsx         # 로딩 화면
+│   │   │   └── LoadingScreen.css
+│   │   └── MainScene.js             # 메인 씬 초기화
+│   ├── utils/
+│   │   ├── LoadingManager.js        # 로딩 진행도 관리
+│   │   └── hex.js                   # 헥사곤 좌표 변환
+│   ├── App.jsx                      # 루트 컴포넌트
+│   ├── App.css
+│   ├── main.jsx                     # 엔트리 포인트
+│   └── index.css
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+---
+
+## 🎯 핵심 구현 사항
+
+### 1. 헥사곤 타일 시스템
+```javascript
+// 헥사곤 좌표를 3D 공간 좌표로 변환
+function hexPosition(q, r, y = 0) {
+    const tileSize = 0.577;
+    const x = tileSize * (Math.sqrt(3) * q + (Math.sqrt(3) / 2) * r);
+    const z = tileSize * (1.5 * r);
+    return [x, y, z];
+}
+```
+
+### 2. 카메라 위치 계산
+```javascript
+// 각 지역을 원점에서 동일한 거리(55 units)로 바라봄
+const distance = 55;
+const height = 10;
+
+// 방향 벡터를 정규화하여 카메라 위치 계산
+const desertDirection = new THREE.Vector3(6, 0, 0);
+const cameraPos = desertDirection.normalize().multiplyScalar(distance);
+cameraPos.y = height;
+```
+
+### 3. FogExp2 애니메이션
+```javascript
+// 지수 안개로 자연스러운 효과
+scene.fog = new THREE.FogExp2(0x888888, 0);
+
+// GSAP로 부드러운 전환
+gsap.to(scene.fog, {
+    duration: 2,
+    density: 0.03,  // 0 → 0.03
+    ease: "power2.inOut"
+});
+```
+
+### 4. 텍스처 교체 시스템
+```javascript
+// 원본 텍스처 저장 (Map 활용)
+originalTextures.set(material.uuid, {
+    texture: material.map.clone(),
+    material: material
+});
+
+// 눈 효과 시 6.5초 후 텍스처 변경
+setTimeout(() => {
+    material.map = snowTexture;
+    material.needsUpdate = true;
+}, 6500);
+```
+
+### 5. InstancedMesh 최적화
+```javascript
+// 대량 파티클을 효율적으로 렌더링
+const mesh = new THREE.InstancedMesh(
+    geometry,      // 빗방울 또는 눈송이 형상
+    material,      // 투명도와 색상
+    1200          // 1200개 인스턴스
+);
+
+// 각 파티클 위치 업데이트
+particles.forEach((p, i) => {
+    dummy.position.set(p.x, p.y, p.z);
+    dummy.updateMatrix();
+    mesh.setMatrixAt(i, dummy.matrix);
+});
+mesh.instanceMatrix.needsUpdate = true;
+```
+
+---
+
+## 🎮 사용 방법
+
+### 기본 조작
+1. **메인 뷰**:
+   - 마우스 드래그: 섬 회전
+   - 마우스 휠: 줌 인/아웃
+   - 지역 클릭: 해당 지역으로 카메라 이동
+
+2. **지역 뷰**:
+   - 뒤로가기 버튼: 메인 뷰로 복귀
+   - 다른 지역 클릭: 해당 지역으로 전환
+
+3. **날씨 변경**:
+   - 우측 하단 날씨 아이콘 클릭
+   - 맑음 / 비 / 눈 / 안개 선택
+
+4. **시간대 변경**:
+   - 우측 하단 시간 아이콘 클릭
+   - 낮 / 밤 선택
+
+### 키보드 단축키
+현재 마우스 기반 인터랙션만 지원
+
+---
+
+## 🔮 향후 계획
+
+- [ ] 추가 지역
+- [ ] 사운드 효과 (환경음, UI 효과음)
+- [ ] 키보드 단축키 지원
+
+---
+
+## 🙏 크레딧
+
+### 3D Assets
+- **[Kenney - Hexagon Kit](https://kenney.nl/assets/hexagon-kit)** - 로우폴리 3D 모델
+
+### 기술 스택
+- **[Three.js](https://threejs.org/)** - 3D 렌더링
+- **[React](https://react.dev/)** - UI 프레임워크
+- **[GSAP](https://greensock.com/gsap/)** - 애니메이션
+- **[Vite](https://vitejs.dev/)** - 빌드 도구
+- **[react-icons](https://react-icons.github.io/react-icons/)** - 아이콘
+
+### 영감
+
+- 로우폴리 아트 스타일
+
+---
+
+<div align="center">
+Made with ❤️ by Geunone2
+</div>
