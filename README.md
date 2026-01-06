@@ -2,7 +2,7 @@
 
 [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://three-lowpoly.vercel.app/)
 [![Three.js](https://img.shields.io/badge/Three.js-v0.181.1-blue)](https://threejs.org/)
-[![React](https://img.shields.io/badge/React-v19.2.0-61dafb)](https://react.dev/)
+[![React](https://img.shields.io/badge/React-v19.2.1-61dafb)](https://react.dev/)
 
 Three.js와 React로 구현한 인터랙티브 로우폴리 3D 섬 프로젝트입니다. 바다, 사막, 초원 세 가지 생태계를 탐험하고, 실시간 날씨와 시간대를 변경하며 다양한 분위기를 경험할 수 있습니다.
 
