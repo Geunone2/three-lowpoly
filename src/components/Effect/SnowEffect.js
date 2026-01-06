@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 export default class SnowEffect {
-    constructor(scene, count = 400) {
+    constructor(scene, count) {
         this.scene = scene;
         this.count = count;
         this.dummy = new THREE.Object3D();
@@ -18,14 +18,14 @@ export default class SnowEffect {
                 x: (Math.random() - 0.5) * 20,
                 y: Math.random() * 20 + 10,
                 z: (Math.random() - 0.5) * 20,
-                speed: Math.random() * 0.02 + 0.005,
+                speed: Math.random() * 0.05 + 0.005,
                 drift: Math.random() * 0.02 + 0.005,
             });
         }
     }
 
     createInstancedMesh() {
-        const geometry = new THREE.SphereGeometry(0.05, 6, 6); // 또는 CylinderGeometry(0.03, 0.03, 0.2)
+        const geometry = new THREE.SphereGeometry(0.05, 6, 6);
         const material = new THREE.MeshBasicMaterial({
             color: 0xffffff,
             transparent: true,
@@ -62,9 +62,9 @@ export default class SnowEffect {
 
     dispose() {
         if (this.mesh) {
-            this.scene.remove(this.mesh);       // 씬에서 제거
-            this.mesh.geometry.dispose();       // GPU Geometry 해제
-            this.mesh.material.dispose();       // Material 해제
+            this.scene.remove(this.mesh);
+            this.mesh.geometry.dispose();
+            this.mesh.material.dispose();
             this.mesh = null;
         }
     }

@@ -1,140 +1,956 @@
 [
-  { "type": "grass", "q": 0, "r": -1, "y": 0 },
-  { "type": "grass", "q": -1, "r": -1, "y": 0 },
-  { "type": "grass", "q": -2, "r": -1, "y": 0 },
-  { "type": "grass", "q": -3, "r": -1, "y": 0 },
-  { "type": "grass-hill", "q": -4, "r": -1, "y": 0 },
-  { "type": "grass-forest", "q": -5, "r": -1, "y": 0 },
-  { "type": "grass", "q": -6, "r": -1, "y": 0 },
-  { "type": "grass", "q": -7, "r": -1, "y": 0 },
-  { "type": "building-farm", "q": -8, "r": -1, "y": 0, "dir": "NE" },
-  { "type": "building-farm", "q": -9, "r": -1, "y": 0, "dir": "SE" },
-  { "type": "grass", "q": -10, "r": -1, "y": 0 },
-
-  { "type": "grass", "q": 1, "r": -2, "y": 0 },
-  { "type": "grass", "q": 0, "r": -2, "y": 0 },
-  { "type": "grass-hill", "q": -1, "r": -2, "y": 0 },
-  { "type": "grass-forest", "q": -2, "r": -2, "y": 0 },
-  { "type": "grass", "q": -3, "r": -2, "y": 0 },
-  { "type": "grass", "q": -4, "r": -2, "y": 0 },
-  { "type": "grass", "q": -5, "r": -2, "y": 0 },
-  { "type": "grass", "q": -6, "r": -2, "y": 0 },
-  { "type": "grass", "q": -7, "r": -2, "y": 0 },
-  { "type": "grass", "q": -8, "r": -2, "y": 0 },
-  { "type": "building-village", "q": -9, "r": -2, "y": 0, "dir": "S" },
-
-  { "type": "grass-forest", "q": 2, "r": -3, "y": 0 },
-  { "type": "grass-forest", "q": 1, "r": -3, "y": 0 },
-  { "type": "grass-forest", "q": 0, "r": -3, "y": 0 },
-  { "type": "grass", "q": -1, "r": -3, "y": 0 },
-  { "type": "grass", "q": -2, "r": -3, "y": 0 },
-  { "type": "grass", "q": -3, "r": -3, "y": 0 },
-  { "type": "grass", "q": -4, "r": -3, "y": 0 },
-  { "type": "grass", "q": -5, "r": -3, "y": 0 },
-  { "type": "grass", "q": -6, "r": -3, "y": 0 },
-  { "type": "grass-forest", "q": -7, "r": -3, "y": 0 },
-  { "type": "grass", "q": -8, "r": -3, "y": 0 },
-  { "type": "grass-forest", "q": -8, "r": -3, "y": 0.1 },
-
-  { "type": "building-sheep", "q": 3, "r": -4, "y": 0 },
-  { "type": "grass", "q": 2, "r": -4, "y": 0 },
-  { "type": "grass-forest", "q": 1, "r": -4, "y": 0 },
-  { "type": "building-house", "q": 0, "r": -4, "y": 0, "dir": "NE" },
-  { "type": "grass", "q": -1, "r": -4, "y": 0 },
-  { "type": "grass", "q": -2, "r": -4, "y": 0 },
-  { "type": "grass", "q": -3, "r": -4, "y": 0 },
-  { "type": "grass", "q": -4, "r": -4, "y": 0 },
-  { "type": "grass", "q": -5, "r": -4, "y": 0 },
-  { "type": "grass", "q": -6, "r": -4, "y": 0 },
-  { "type": "grass", "q": -7, "r": -4, "y": 0 },
-
-  { "type": "grass-forest", "q": 4, "r": -5, "y": 0 },
-  { "type": "grass", "q": 3, "r": -5, "y": 0 },
-  { "type": "grass-forest", "q": 2, "r": -5, "y": 0 },
-  { "type": "building-house", "q": 1, "r": -5, "y": 0 },
-  { "type": "dirt", "q": 0, "r": -5, "y": 0.1 },
-  { "type": "dirt", "q": -1, "r": -5, "y": 0.1 },
-  { "type": "dirt", "q": 0, "r": -5, "y": 0 },
-  { "type": "dirt", "q": -1, "r": -5, "y": 0 },
-  { "type": "grass-forest", "q": -2, "r": -5, "y": 0 },
-  { "type": "grass", "q": -3, "r": -5, "y": 0 },
-  { "type": "grass", "q": -4, "r": -5, "y": 0 },
-  { "type": "grass", "q": -5, "r": -5, "y": 0 },
-  { "type": "grass-hill", "q": -6, "r": -5, "y": 0 },
-
-  { "type": "grass", "q": 5, "r": -6, "y": 0 },
-  { "type": "grass", "q": 4, "r": -6, "y": 0 },
-  { "type": "grass", "q": 3, "r": -6, "y": 0 },
-  { "type": "grass", "q": 2, "r": -6, "y": 0 },
-  { "type": "dirt", "q": 1, "r": -6, "y": 0.1 },
-  { "type": "dirt", "q": 1, "r": -6, "y": 0 },
-  { "type": "building-market", "q": 0, "r": -6, "y": 0 },
-  { "type": "dirt", "q": -1, "r": -6, "y": 0.1 },
-  { "type": "dirt", "q": -1, "r": -6, "y": 0 },
-  { "type": "grass-forest", "q": -2, "r": -6, "y": 0 },
-  { "type": "grass", "q": -3, "r": -6, "y": 0 },
-  { "type": "grass-forest", "q": -4, "r": -6, "y": 0 },
-  { "type": "grass-forest", "q": -5, "r": -6, "y": 0 },
-
-  { "type": "grass-forest", "q": 6, "r": -7, "y": 0 },
-  { "type": "grass-forest", "q": 5, "r": -7, "y": 0 },
-  { "type": "grass", "q": 4, "r": -7, "y": 0 },
-  { "type": "grass-forest", "q": 3, "r": -7, "y": 0 },
-  { "type": "building-archery", "q": 2, "r": -7, "y": 0, "dir": "N" },
-  { "type": "dirt", "q": 1, "r": -7, "y": 0.1 },
-  { "type": "dirt", "q": 1, "r": -7, "y": 0 },
-  { "type": "dirt", "q": 0, "r": -7, "y": 0.1 },
-  { "type": "dirt", "q": 0, "r": -7, "y": 0 },
-  { "type": "building-wall", "q": -1, "r": -7, "y": 0, "dir": "SE" },
-  { "type": "building-wall", "q": -2, "r": -7, "y": 0, "dir": "SE" },
-  { "type": "building-wall", "q": -3, "r": -7, "y": 0, "dir": "SE" },
-  { "type": "building-walls", "q": -4, "r": -7, "y": 0 },
-
-  { "type": "grass-forest", "q": 7, "r": -8, "y": 0 },
-  { "type": "grass-forest", "q": 6, "r": -8, "y": 0 },
-  { "type": "grass", "q": 5, "r": -8, "y": 0 },
-  { "type": "grass-forest", "q": 4, "r": -8, "y": 0 },
-  { "type": "grass-forest", "q": 3, "r": -8, "y": 0 },
-  { "type": "building-wall", "q": 2, "r": -8, "y": 0, "dir": "SW" },
-  { "type": "stone", "q": 1, "r": -8, "y": 0 },
-  { "type": "stone", "q": 0, "r": -8, "y": 0 },
-  { "type": "stone", "q": -1, "r": -8, "y": 0 },
-  { "type": "stone", "q": -2, "r": -8, "y": 0 },
-  { "type": "stone", "q": -3, "r": -8, "y": 0 },
-
-  { "type": "grass", "q": 8, "r": -9, "y": 0 },
-  { "type": "grass", "q": 7, "r": -9, "y": 0 },
-  { "type": "grass", "q": 6, "r": -9, "y": 0 },
-  { "type": "grass-forest", "q": 5, "r": -9, "y": 0 },
-  { "type": "grass-forest", "q": 4, "r": -9, "y": 0 },
-  { "type": "building-wall", "q": 3, "r": -9, "y": 0, "dir": "SW" },
-  { "type": "stone", "q": 2, "r": -9, "y": 0 },
-  { "type": "stone", "q": 1, "r": -9, "y": 0 },
-  { "type": "stone", "q": 0, "r": -9, "y": 0 },
-  { "type": "stone", "q": -1, "r": -9, "y": 0 },
-  { "type": "stone", "q": -2, "r": -9, "y": 0 },
-
-  { "type": "grass", "q": 9, "r": -10, "y": 0 },
-  { "type": "grass", "q": 8, "r": -10, "y": 0 },
-  { "type": "grass", "q": 7, "r": -10, "y": 0 },
-  { "type": "grass", "q": 6, "r": -10, "y": 0 },
-  { "type": "grass-forest", "q": 5, "r": -10, "y": 0 },
-  { "type": "building-wall", "q": 4, "r": -10, "y": 0, "dir": "SW" },
-  { "type": "stone", "q": 3, "r": -10, "y": 0 },
-  { "type": "stone", "q": 2, "r": -10, "y": 0 },
-  { "type": "stone", "q": 1, "r": -10, "y": 0 },
-  { "type": "stone", "q": 0, "r": -10, "y": 0 },
-  { "type": "stone", "q": -1, "r": -10, "y": 0 },
-
-  { "type": "grass-forest", "q": 10, "r": -11, "y": 0 },
-  { "type": "grass", "q": 9, "r": -11, "y": 0 },
-  { "type": "grass", "q": 8, "r": -11, "y": 0 },
-  { "type": "grass", "q": 7, "r": -11, "y": 0 },
-  { "type": "grass-forest", "q": 6, "r": -11, "y": 0 },
-  { "type": "building-walls", "q": 5, "r": -11, "y": 0 },
-  { "type": "stone", "q": 4, "r": -11, "y": 0 },
-  { "type": "stone", "q": 3, "r": -11, "y": 0 },
-  { "type": "stone", "q": 2, "r": -11, "y": 0 },
-  { "type": "stone", "q": 1, "r": -11, "y": 0 },
-  { "type": "stone", "q": 0, "r": -11, "y": 0 }
+  {
+    "type": "grass",
+    "q": 0,
+    "r": -1,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -1,
+    "r": -1,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -2,
+    "r": -1,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -3,
+    "r": -1,
+    "y": 0
+  },
+  {
+    "type": "grass-hill",
+    "q": -4,
+    "r": -1,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": -5,
+    "r": -1,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -6,
+    "r": -1,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -7,
+    "r": -1,
+    "y": 0
+  },
+  {
+    "type": "building-farm",
+    "q": -8,
+    "r": -1,
+    "y": 0,
+    "dir": "NE"
+  },
+  {
+    "type": "building-farm",
+    "q": -9,
+    "r": -1,
+    "y": 0,
+    "dir": "SE"
+  },
+  {
+    "type": "grass",
+    "q": -10,
+    "r": -1,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 1,
+    "r": -2,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 0,
+    "r": -2,
+    "y": 0
+  },
+  {
+    "type": "grass-hill",
+    "q": -1,
+    "r": -2,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": -2,
+    "r": -2,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -3,
+    "r": -2,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -4,
+    "r": -2,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -5,
+    "r": -2,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -6,
+    "r": -2,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -7,
+    "r": -2,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -8,
+    "r": -2,
+    "y": 0
+  },
+  {
+    "type": "building-village",
+    "q": -9,
+    "r": -2,
+    "y": 0,
+    "dir": "S"
+  },
+  {
+    "type": "grass-forest",
+    "q": 2,
+    "r": -3,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": 1,
+    "r": -3,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": 0,
+    "r": -3,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -1,
+    "r": -3,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -2,
+    "r": -3,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -3,
+    "r": -3,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -4,
+    "r": -3,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -5,
+    "r": -3,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -6,
+    "r": -3,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": -7,
+    "r": -3,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -8,
+    "r": -3,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": -8,
+    "r": -3,
+    "y": 0.1
+  },
+  {
+    "type": "building-sheep",
+    "q": 3,
+    "r": -4,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 2,
+    "r": -4,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": 1,
+    "r": -4,
+    "y": 0
+  },
+  {
+    "type": "building-house",
+    "q": 0,
+    "r": -4,
+    "y": 0,
+    "dir": "NE"
+  },
+  {
+    "type": "grass",
+    "q": -1,
+    "r": -4,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -2,
+    "r": -4,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -3,
+    "r": -4,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -4,
+    "r": -4,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -5,
+    "r": -4,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -6,
+    "r": -4,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -7,
+    "r": -4,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": 4,
+    "r": -5,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 3,
+    "r": -5,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": 2,
+    "r": -5,
+    "y": 0
+  },
+  {
+    "type": "building-house",
+    "q": 1,
+    "r": -5,
+    "y": 0
+  },
+  {
+    "type": "dirt",
+    "q": 0,
+    "r": -5,
+    "y": 0.1
+  },
+  {
+    "type": "dirt",
+    "q": -1,
+    "r": -5,
+    "y": 0.1
+  },
+  {
+    "type": "dirt",
+    "q": 0,
+    "r": -5,
+    "y": 0
+  },
+  {
+    "type": "dirt",
+    "q": -1,
+    "r": -5,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": -2,
+    "r": -5,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -3,
+    "r": -5,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -4,
+    "r": -5,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -5,
+    "r": -5,
+    "y": 0
+  },
+  {
+    "type": "grass-hill",
+    "q": -6,
+    "r": -5,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 5,
+    "r": -6,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 4,
+    "r": -6,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 3,
+    "r": -6,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 2,
+    "r": -6,
+    "y": 0
+  },
+  {
+    "type": "dirt",
+    "q": 1,
+    "r": -6,
+    "y": 0.1
+  },
+  {
+    "type": "dirt",
+    "q": 1,
+    "r": -6,
+    "y": 0
+  },
+  {
+    "type": "building-market",
+    "q": 0,
+    "r": -6,
+    "y": 0
+  },
+  {
+    "type": "dirt",
+    "q": -1,
+    "r": -6,
+    "y": 0.1
+  },
+  {
+    "type": "dirt",
+    "q": -1,
+    "r": -6,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": -2,
+    "r": -6,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": -3,
+    "r": -6,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": -4,
+    "r": -6,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": -5,
+    "r": -6,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": 6,
+    "r": -7,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": 5,
+    "r": -7,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 4,
+    "r": -7,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": 3,
+    "r": -7,
+    "y": 0
+  },
+  {
+    "type": "building-archery",
+    "q": 2,
+    "r": -7,
+    "y": 0,
+    "dir": "N"
+  },
+  {
+    "type": "dirt",
+    "q": 1,
+    "r": -7,
+    "y": 0.1
+  },
+  {
+    "type": "dirt",
+    "q": 1,
+    "r": -7,
+    "y": 0
+  },
+  {
+    "type": "dirt",
+    "q": 0,
+    "r": -7,
+    "y": 0.1
+  },
+  {
+    "type": "dirt",
+    "q": 0,
+    "r": -7,
+    "y": 0
+  },
+  {
+    "type": "building-wall",
+    "q": -1,
+    "r": -7,
+    "y": 0,
+    "dir": "SE"
+  },
+  {
+    "type": "building-wall",
+    "q": -2,
+    "r": -7,
+    "y": 0,
+    "dir": "SE"
+  },
+  {
+    "type": "building-wall",
+    "q": -3,
+    "r": -7,
+    "y": 0,
+    "dir": "SE"
+  },
+  {
+    "type": "building-walls",
+    "q": -4,
+    "r": -7,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": 7,
+    "r": -8,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": 6,
+    "r": -8,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 5,
+    "r": -8,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": 4,
+    "r": -8,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": 3,
+    "r": -8,
+    "y": 0
+  },
+  {
+    "type": "building-wall",
+    "q": 2,
+    "r": -8,
+    "y": 0,
+    "dir": "SW"
+  },
+  {
+    "type": "stone",
+    "q": 1,
+    "r": -8,
+    "y": 0
+  },
+  {
+    "type": "stone",
+    "q": 0,
+    "r": -8,
+    "y": 0
+  },
+  {
+    "type": "stone",
+    "q": -1,
+    "r": -8,
+    "y": 0
+  },
+  {
+    "type": "stone",
+    "q": -2,
+    "r": -8,
+    "y": 0
+  },
+  {
+    "type": "stone",
+    "q": -3,
+    "r": -8,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 8,
+    "r": -9,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 7,
+    "r": -9,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 6,
+    "r": -9,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": 5,
+    "r": -9,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": 4,
+    "r": -9,
+    "y": 0
+  },
+  {
+    "type": "building-wall",
+    "q": 3,
+    "r": -9,
+    "y": 0,
+    "dir": "SW"
+  },
+  {
+    "type": "stone",
+    "q": 2,
+    "r": -9,
+    "y": 0
+  },
+  {
+    "type": "stone",
+    "q": 1,
+    "r": -9,
+    "y": 0
+  },
+  {
+    "type": "stone",
+    "q": 0,
+    "r": -9,
+    "y": 0
+  },
+  {
+    "type": "stone",
+    "q": -1,
+    "r": -9,
+    "y": 0
+  },
+  {
+    "type": "stone",
+    "q": -2,
+    "r": -9,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 9,
+    "r": -10,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 8,
+    "r": -10,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 7,
+    "r": -10,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 6,
+    "r": -10,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": 5,
+    "r": -10,
+    "y": 0
+  },
+  {
+    "type": "building-wall",
+    "q": 4,
+    "r": -10,
+    "y": 0,
+    "dir": "SW"
+  },
+  {
+    "type": "stone",
+    "q": 3,
+    "r": -10,
+    "y": 0
+  },
+  {
+    "type": "stone",
+    "q": 2,
+    "r": -10,
+    "y": 0
+  },
+  {
+    "type": "stone",
+    "q": 1,
+    "r": -10,
+    "y": 0
+  },
+  {
+    "type": "stone",
+    "q": 0,
+    "r": -10,
+    "y": 0
+  },
+  {
+    "type": "stone",
+    "q": -1,
+    "r": -10,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": 10,
+    "r": -11,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 9,
+    "r": -11,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 8,
+    "r": -11,
+    "y": 0
+  },
+  {
+    "type": "grass",
+    "q": 7,
+    "r": -11,
+    "y": 0
+  },
+  {
+    "type": "grass-forest",
+    "q": 6,
+    "r": -11,
+    "y": 0
+  },
+  {
+    "type": "building-walls",
+    "q": 5,
+    "r": -11,
+    "y": 0
+  },
+  {
+    "type": "stone",
+    "q": 4,
+    "r": -11,
+    "y": 0
+  },
+  {
+    "type": "stone",
+    "q": 3,
+    "r": -11,
+    "y": 0
+  },
+  {
+    "type": "stone",
+    "q": 2,
+    "r": -11,
+    "y": 0
+  },
+  {
+    "type": "stone",
+    "q": 1,
+    "r": -11,
+    "y": 0
+  },
+  {
+    "type": "stone",
+    "q": 0,
+    "r": -11,
+    "y": 0
+  },
+  {
+    "type": "river-straight",
+    "q": -11,
+    "r": -1,
+    "y": 0,
+    "dir": "NW"
+  },
+  {
+    "type": "river-straight",
+    "q": -10,
+    "r": -2,
+    "y": 0,
+    "dir": "NW"
+  },
+  {
+    "type": "river-straight",
+    "q": -9,
+    "r": -3,
+    "y": 0,
+    "dir": "NW"
+  },
+  {
+    "type": "river-straight",
+    "q": -8,
+    "r": -4,
+    "y": 0,
+    "dir": "NW"
+  },
+  {
+    "type": "river-straight",
+    "q": -7,
+    "r": -5,
+    "y": 0,
+    "dir": "NW"
+  },
+  {
+    "type": "river-straight",
+    "q": -6,
+    "r": -6,
+    "y": 0,
+    "dir": "NW"
+  },
+  {
+    "type": "river-straight",
+    "q": -5,
+    "r": -7,
+    "y": 0,
+    "dir": "NW"
+  },
+  {
+    "type": "river-straight",
+    "q": -4,
+    "r": -8,
+    "y": 0,
+    "dir": "NW"
+  },
+  {
+    "type": "river-straight",
+    "q": -3,
+    "r": -9,
+    "y": 0,
+    "dir": "NW"
+  },
+  {
+    "type": "river-straight",
+    "q": -2,
+    "r": -10,
+    "y": 0,
+    "dir": "NW"
+  },
+  {
+    "type": "river-straight",
+    "q": -1,
+    "r": -11,
+    "y": 0,
+    "dir": "NW"
+  },
+  {
+    "type": "river-corner",
+    "q": 0,
+    "r": -12,
+    "y": 0,
+    "dir": "S"
+  },
+  {
+    "type": "river-straight",
+    "q": 1,
+    "r": -12,
+    "y": 0,
+    "dir": "N"
+  },
+  {
+    "type": "river-straight",
+    "q": 2,
+    "r": -12,
+    "y": 0,
+    "dir": "N"
+  },
+  {
+    "type": "river-straight",
+    "q": 3,
+    "r": -12,
+    "y": 0,
+    "dir": "N"
+  },
+  {
+    "type": "river-straight",
+    "q": 4,
+    "r": -12,
+    "y": 0,
+    "dir": "N"
+  },
+  {
+    "type": "river-straight",
+    "q": 5,
+    "r": -12,
+    "y": 0,
+    "dir": "N"
+  },
+  {
+    "type": "river-straight",
+    "q": 6,
+    "r": -12,
+    "y": 0,
+    "dir": "N"
+  },
+  {
+    "type": "river-straight",
+    "q": 7,
+    "r": -12,
+    "y": 0,
+    "dir": "N"
+  },
+  {
+    "type": "river-straight",
+    "q": 8,
+    "r": -12,
+    "y": 0,
+    "dir": "N"
+  },
+  {
+    "type": "river-straight",
+    "q": 9,
+    "r": -12,
+    "y": 0,
+    "dir": "N"
+  },
+  {
+    "type": "river-straight",
+    "q": 10,
+    "r": -12,
+    "y": 0,
+    "dir": "N"
+  },
+  {
+    "type": "river-straight",
+    "q": 11,
+    "r": -12,
+    "y": 0,
+    "dir": "N"
+  },
+  {
+    "type": "river-intersectionA",
+    "q": -12,
+    "r": 0,
+    "y": 0,
+    "dir": "SE"
+  },
+  {
+    "type": "river-intersectionA",
+    "q": 12,
+    "r": -12,
+    "y": 0,
+    "dir": "SW"
+  }
 ]

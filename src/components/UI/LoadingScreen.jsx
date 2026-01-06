@@ -7,7 +7,6 @@ export default function LoadingScreen({progress, onComplete}) {
     const [isFadingOut, setIsFadingOut] = useState(false);
 
     useEffect(() => {
-        // Progress가 100%에 도달하면 버튼 활성화
         if (progress >= 100) {
             setIsButtonActive(true);
         }
@@ -18,10 +17,9 @@ export default function LoadingScreen({progress, onComplete}) {
 
         setIsFadingOut(true);
 
-        // GSAP을 사용한 Fade-out 애니메이션
         const timeline = gsap.timeline({
             onComplete: () => {
-                onComplete(); // 부모 컴포넌트에 완료 알림
+                onComplete();
             }
         });
 
