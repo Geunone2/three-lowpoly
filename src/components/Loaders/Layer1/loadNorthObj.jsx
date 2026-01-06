@@ -24,7 +24,7 @@ export async function loadNorthModels(scene, manager) {
         const original = northModelCache[item.type];
         if (!original) continue;
 
-        const object = original.clone(true); // deep clone 권장
+        const object = original.clone(true);
 
         object.position.set(...item.position);
 

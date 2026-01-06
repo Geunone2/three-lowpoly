@@ -1,0 +1,184 @@
+.camera-description {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: none; /* ✅ max-width 제거 */
+    width: 60%; /* ✅ 창의 60% */
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 24px;
+    padding-bottom: 50px;
+    color: white;
+    z-index: 100;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* 열린 상태 */
+.camera-description.open {
+    transform: translate(-50%, 0);
+    opacity: 1;
+}
+
+/* 닫힌 상태 - 위로 숨김 (버튼 공간만 남김) */
+.camera-description.closed {
+    transform: translate(-50%, calc(-100% + 60px));
+    opacity: 1;
+}
+
+.camera-description.closed .description-content {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* 토글 버튼 */
+.toggle-button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 101;
+    padding: 0;
+}
+
+.toggle-button:hover {
+    color: rgba(255, 255, 255, 0.8);
+    transform: translateX(-50%) scale(1.2);
+}
+
+.toggle-button:active {
+    transform: translateX(-50%) scale(1);
+}
+
+.description-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: opacity 0.3s ease;
+}
+
+.description-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.camera-description.sea .description-title {
+    background: linear-gradient(135deg, #667eea 0%, #4facfe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.camera-description.desert .description-title {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.camera-description.prairie .description-title {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.description-text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.description-details {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0; /* ✅ auto 제거 -> 왼쪽 정렬 */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: none; /* ✅ max-width 제거 */
+    text-align: left; /* ✅ 명시적으로 왼쪽 정렬 */
+}
+
+.description-details li {
+    font-size: 14px;
+    padding-left: 20px;
+    position: relative;
+    opacity: 0.85;
+    line-height: 1.4;
+    text-align: left; /* ✅ 명시적으로 왼쪽 정렬 */
+}
+
+.description-details li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+}
+
+.description-credits {
+    font-size: 12px;
+    margin: 8px 0 0 0;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.7;
+    font-style: italic;
+    text-align: center;
+
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .camera-description {
+        top: 10px;
+        width: calc(100% - 40px); /* ✅ 모바일에서는 거의 전체 너비 */
+        padding: 16px;
+        padding-bottom: 45px;
+    }
+
+    .camera-description.closed {
+        transform: translate(-50%, calc(-100% + 50px));
+    }
+
+    .toggle-button {
+        bottom: 8px;
+        font-size: 24px;
+    }
+
+    .description-title {
+        font-size: 20px;
+    }
+
+    .description-text {
+        font-size: 14px;
+    }
+
+    .description-details li {
+        font-size: 12px;
+    }
+}

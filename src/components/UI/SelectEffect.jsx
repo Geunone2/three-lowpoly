@@ -7,7 +7,7 @@ export default function SelectEffect({onWeatherChange}) {
     const handleWeatherChange = (type) => {
         setActiveWeather(type);
         onWeatherChange(type);
-        setIsOpen(false); // 선택 후 닫기
+        setIsOpen(false);
     };
 
     const weatherOptions = [
