@@ -10,7 +10,7 @@ export default function SelectTime({onChange}) {
         const nextIsNight = timeType === 'night';
         setIsNight(nextIsNight);
         onChange(nextIsNight ? LightTypes.NIGHT : LightTypes.SUN);
-        setIsOpen(false); // 선택 후 닫기
+        setIsOpen(false);
     }
 
     const timeOptions = [

@@ -89,15 +89,13 @@ export class LightController {
 
         for (let i = 0; i < starCount; i++) {
 
-            // 카메라 바라보는 방향
             const forward = new THREE.Vector3();
             camera.getWorldDirection(forward);
 
-            const distance = 80; // 카메라 앞 80 지점
+            const distance = 80;
             const basePos = new THREE.Vector3().copy(camera.position)
                 .add(forward.multiplyScalar(distance));
 
-            // 퍼뜨리기
             basePos.x = (Math.random() - 0.5) * 40;
             basePos.y = Math.random() * 2 + 6;
             basePos.z = (Math.random() - 0.5) * 40;
@@ -120,28 +118,4 @@ export class LightController {
         this.starParticles = stars;
         this.scene.add(stars);
     }
-
-    // createMoon(count) {
-    //     for (let i = 0; i < count; i++) {
-    //         const x = 20;
-    //         const y = 5;
-    //         const z = 0;
-    //
-    //         const starGroup = new THREE.Group();
-    //
-    //         const light = new THREE.PointLight(0xffffff, 40, 300);
-    //         light.position.set(x, y, z);
-    //         starGroup.add(light);
-    //
-    //         const sphere = new THREE.Mesh(
-    //             new THREE.SphereGeometry(1.5, 32, 32),
-    //             new THREE.MeshBasicMaterial({color: 0xffffff})
-    //         );
-    //         sphere.position.set(x, y, z);
-    //         starGroup.add(sphere);
-    //
-    //         this.glowingStars.push(starGroup);
-    //         this.scene.add(starGroup);
-    //     }
-    // }
 }

@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 export default class RainEffect {
-    constructor(scene, count = 500) {
+    constructor(scene, count) {
         this.scene = scene;
         this.count = count;
         this.dummy = new THREE.Object3D();

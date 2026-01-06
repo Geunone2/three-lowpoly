@@ -24,7 +24,7 @@ export async function loadSWBuildingModels(scene, manager) {
         const original = swBuildingModelCache[item.type];
         if (!original) continue;
 
-        const object = original.clone(true); // deep clone 권장
+        const object = original.clone(true);
 
         object.position.set(...item.position);
 

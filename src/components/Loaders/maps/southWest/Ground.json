@@ -726,5 +726,180 @@
     "q": -11,
     "r": 11,
     "y": 0
+  },
+  {
+    "type": "water",
+    "q": -12,
+    "r": 1,
+    "y": 0,
+    "dir": "SW"
+  },
+  {
+    "type": "water",
+    "q": -12,
+    "r": 2,
+    "y": 0,
+    "dir": "SW"
+  },
+  {
+    "type": "water",
+    "q": -12,
+    "r": 3,
+    "y": 0,
+    "dir": "SW"
+  },
+  {
+    "type": "water",
+    "q": -12,
+    "r": 4,
+    "y": 0,
+    "dir": "SW"
+  },
+  {
+    "type": "water",
+    "q": -12,
+    "r": 5,
+    "y": 0,
+    "dir": "SW"
+  },
+  {
+    "type": "water",
+    "q": -12,
+    "r": 6,
+    "y": 0,
+    "dir": "SW"
+  },
+  {
+    "type": "water",
+    "q": -12,
+    "r": 7,
+    "y": 0,
+    "dir": "SW"
+  },
+  {
+    "type": "water",
+    "q": -12,
+    "r": 8,
+    "y": 0,
+    "dir": "SW"
+  },
+  {
+    "type": "water",
+    "q": -12,
+    "r": 9,
+    "y": 0,
+    "dir": "SW"
+  },
+  {
+    "type": "water",
+    "q": -12,
+    "r": 10,
+    "y": 0,
+    "dir": "SW"
+  },
+  {
+    "type": "water",
+    "q": -12,
+    "r": 11,
+    "y": 0,
+    "dir": "SW"
+  },
+  {
+    "type": "water",
+    "q": -12,
+    "r": 12,
+    "y": 0,
+    "dir": "NE"
+  },
+  {
+    "type": "water",
+    "q": -11,
+    "r": 12,
+    "y": 0,
+    "dir": "S"
+  },
+  {
+    "type": "water",
+    "q": -10,
+    "r": 12,
+    "y": 0,
+    "dir": "S"
+  },
+  {
+    "type": "water",
+    "q": -9,
+    "r": 12,
+    "y": 0,
+    "dir": "S"
+  },
+  {
+    "type": "water",
+    "q": -8,
+    "r": 12,
+    "y": 0,
+    "dir": "S"
+  },
+  {
+    "type": "water",
+    "q": -7,
+    "r": 12,
+    "y": 0,
+    "dir": "S"
+  },
+  {
+    "type": "water",
+    "q": -6,
+    "r": 12,
+    "y": 0,
+    "dir": "S"
+  },
+  {
+    "type": "water",
+    "q": -5,
+    "r": 12,
+    "y": 0,
+    "dir": "S"
+  },
+  {
+    "type": "water",
+    "q": -4,
+    "r": 12,
+    "y": 0,
+    "dir": "S"
+  },
+  {
+    "type": "water",
+    "q": -3,
+    "r": 12,
+    "y": 0,
+    "dir": "S"
+  },
+  {
+    "type": "water",
+    "q": -2,
+    "r": 12,
+    "y": 0,
+    "dir": "S"
+  },
+  {
+    "type": "water",
+    "q": -1,
+    "r": 12,
+    "y": 0,
+    "dir": "S"
+  },
+  {
+    "type": "river-intersectionA",
+    "q": -12,
+    "r": 0,
+    "y": 0,
+    "dir": "SE"
+  },
+  {
+    "type": "river-corner-sharp",
+    "q": 0,
+    "r": 12,
+    "y": 0,
+    "dir": "NE"
   }
 ]
